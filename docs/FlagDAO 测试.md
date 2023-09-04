@@ -2,7 +2,7 @@
 
 
 
-#### Roadmap
+### Roadmap
 
 - [x] 5.30 合约基础模块、前端基础模块   15H
 - [x] 5.31 切换 Webpack 到 Vite，完成 Rainbow、Wagmi 版本更新重写 4H
@@ -36,7 +36,18 @@
   - [ ] Collect winning!
   - [ ] Claim the Bet!
 
+- [ ] 最高可以开几倍
+
+  - [ ] 无限大倍，
+    比如小明自己立 flag 质押了 ￥100，
+    比如小红 Pledge ￥0.01，如果没有其他 bettors 竞争，她可以在小明的 flag rug 后独拿 flager 的 100 块和自己的 ￥0.01。
+
+    10000 倍低风险杠杆？
+
+    应该设置一个最低准入： 比如 10%，否则没人愿意立 Flag 了。
+
 - [ ] 质押分 2 种情况，在点击按钮时做区分 :
+
   - [ ] 质押实际 Token （Numbai）
   - [ ] USDT （Polygon Matic 主链）当测试链测试都没问题没 Bug 之后，再上主链。
   - [ ] 只立 flaG，不质押（Flag 广场）
@@ -66,16 +77,14 @@ Co-Learn Token
 
 
 Token 地址（**Mumbai**）：
-0xf9FaE855dAf6d4EB256b742d188382B8465d139D  
+**0xf9FaE855dAf6d4EB256b742d188382B8465d139D**  
 
 
 
 
 ### FlagDAO Deploy：
 
-**ERC-20 合约地址 ：**
-
-0xf9FaE855dAf6d4EB256b742d188382B8465d139D                             
+**ERC-20 合约地址 ：** 如上                             
 
 ["0x65d5b68A7878A987e7A19826A7f9Aa6F5F92e10F"]                         (多签 Contract Owners)
 
@@ -89,7 +98,7 @@ FlagDAO 部署之后，ERC-20 Token 要授权给 FlagDAO 合约地址 `0xc7712D2
 
 ["0x65d5b68A7878A987e7A19826A7f9Aa6F5F92e10F","0xab6Abd1177a962036DE7EBa695983c284100F61a","0x8976CF0CE595507d5A0F7Cc338BeC94C52524B98"]
 
-FlagSAO 合约地址
+FlagDAO 合约地址
 
 
 
@@ -150,3 +159,37 @@ Demian
 Keep
 
 研究 zkbridge，给大家分享代码实现和项目逻辑
+
+
+
+
+
+### 社区测试
+
+#### 1. 发 `$LT` 立 Flag
+
+比如十一的钱包：0x4bbd2A03A0aD7449EB273f4385cE25E9D2c8D8fE
+
+1. 先 import ERC-20 合约地址
+2. **addTokens()**
+3. approveBatch:
+   1. whitelist: ["0x4bbd2A03A0aD7449EB273f4385cE25E9D2c8D8fE"]
+   2. spender: Flag 合约
+
+
+
+
+
+文案：
+
+Done，给了 1000 $LT 
+Mumbai 合约地址：0xc7712D2FeEf05619269963A7D00baeFE8EDE6AEA
+
+先领点 Polygon 测试币（Mumbai Faucet）：https://mumbaifaucet.com/
+
+这笔 `$LT` 在 https://flag-dao.vercel.app/ 可以用来：
+
+1. 建立你自己的 Flag：**Flag's Pledge Amount:** 输入自己的质押金额
+2. 围观对赌别人 Flag：在首页点击 Pledge 质押对赌金额
+
+Flag 完成或者 Rug 后，都可以再次 Claim 你的收益

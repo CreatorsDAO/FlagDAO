@@ -59,7 +59,7 @@ const BettorsModal: React.FC<HoverModalProps> = ({bettors_plg, flag_id}) => {
 
   // console.log("flag_id", flag_id);
   // console.log("getBettors data", data);
-  console.log("getBettors bettors", bettors);
+  // console.log("getBettors bettors", bettors);
 
 
   return (

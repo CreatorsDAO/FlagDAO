@@ -42,8 +42,10 @@ const Card: React.FC<CardProps> = (props) => {
     functionName: 'pledge',
     args: [_id, _amt],
     enabled: Boolean(_id)
-  })
-  const { data, isLoading, write: write_pledge } = useContractWrite(config)
+  });
+
+  const { data, isLoading, write: write_pledge, error } = useContractWrite(config);
+  if(error) console.log("Pledge error", error);
 
   // console.log("props.bettors_plg .. ",props.name, props.bettors_plg, _amt);
 
